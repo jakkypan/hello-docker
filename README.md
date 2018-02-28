@@ -30,6 +30,18 @@ docker container rm <container-id>
 docker image ls
 # 删除 image 文件
 docker image rm [imageName] | [imageId]
+
+# container run是新建容器，每运行一次就会新建一个容器。如果希望重复使用容器，则使用这个命令
+docker container start
+# 中止容器，向容器里面的主进程发出 SIGTERM 信号，然后过一段时间再发出 SIGKILL 信号（给了程序进行收尾的工作）
+docker container stop
+# 中止容器，直接向容器里面的主进程发出 SIGKILL 信号（相当于强制中止，可能存在数据丢失的问题）
+docker container kill
+# 查看docker容器的输出，即容器里面shell的标准输出
+docker container logs
+# 命令用于从正在运行的 Docker 容器里面，将文件拷贝到本机
+docker container cp
+
 ```
 
 start build:
